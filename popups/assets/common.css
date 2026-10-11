@@ -1,0 +1,162 @@
+/*
+    ChurrOS Popups — Liquid Glass base
+    Transparencia: el alpha del fondo de .popup; el blur lo aplica niri
+    (window-rule background-effect blur true para org.churros.popup).
+*/
+
+@define-color window_bg_color transparent;
+@define-color view_bg_color transparent;
+
+window,
+window.background {
+    background-color: transparent;
+}
+
+window.popup,
+window.background.churros-glass,
+.popup {
+    background-color: var(--bg-window, rgba(13, 16, 22, 0.78));
+    background-image: none;
+    border-radius: 20px;
+    border: 1px solid var(--border-soft, rgba(255, 255, 255, 0.12));
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.50),
+                0 1px 0 rgba(255, 255, 255, 0.18) inset,
+                0 0 20px rgba(255, 255, 255, 0.02) inset;
+    /* Asegurar que el widget raíz permite transparencia */
+    opacity: 1.0;
+}
+
+.popup-content {
+    padding: 18px;
+}
+
+/* ── Cabecera ─────────────────────────────────────── */
+.popup-header {
+    min-height: 44px;
+    margin-bottom: 16px;
+    padding: 6px 8px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.popup-header-icon {
+    color: var(--accent, #F97316);
+    font-size: 20px;
+    margin-right: 12px;
+    min-width: 28px;
+    min-height: 28px;
+    border-radius: 10px;
+    background: var(--accent-bg-hover, rgba(249, 115, 22, 0.16));
+    box-shadow: 0 0 16px var(--accent-glow, rgba(249, 115, 22, 0.25));
+    padding: 4px 6px;
+}
+
+.popup-header-title {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .2px;
+}
+
+/* ── Tarjeta base de contenido ─────────────────────── */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25),
+                0 1px 0 rgba(255, 255, 255, 0.14) inset;
+}
+
+/* ── Título de sección ─────────────────────────────── */
+.section-title {
+    color: var(--accent-soft, #FB923C);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* ── Estados vacíos / info ─────────────────────────── */
+.empty-label {
+    color: rgba(255, 255, 255, 0.60);
+    font-size: 13px;
+    padding: 18px 0;
+}
+
+/* ── Botones base ──────────────────────────────────── */
+button {
+    border-radius: 12px;
+    padding: 8px 14px;
+    transition: 160ms cubic-bezier(.4, 0, .2, 1);
+}
+
+button.flat {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+button.flat:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* ── Separador ─────────────────────────────────────── */
+separator {
+    background: rgba(255, 255, 255, 0.10);
+    min-height: 1px;
+}
+
+/* ── Light Mode Overrides ──────────────────────────────── */
+
+window.light,
+window.light.popup,
+window.light.background.churros-glass,
+window.light .popup {
+    background-color: var(--bg-window, rgba(245, 247, 250, 0.82));
+    color: #1a1e24;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12),
+                0 1px 0 rgba(255, 255, 255, 0.80) inset;
+}
+
+window.light label {
+    color: #111827;
+}
+
+window.light .popup-header {
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+window.light .popup-header-title {
+    color: #111827;
+}
+
+window.light .card {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05),
+                0 1px 0 rgba(255, 255, 255, 0.90) inset;
+}
+
+window.light .empty-label {
+    color: #6b7280;
+}
+
+window.light button.flat {
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #111827;
+}
+
+window.light button.flat:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+window.light separator {
+    background: rgba(0, 0, 0, 0.08);
+}
+

@@ -1,0 +1,34 @@
+# MAINTAINERS
+#
+# Quién responde por cada parte del repositorio. Para saber a quién dirigir
+# una duda o una propuesta antes de abrir un issue.
+#
+# Formato:
+#   <ruta>  <@usuario> [<@usuario>...]   descripción
+#
+# Las reglas más específicas van después de las más generales, y la última
+# que coincide es la que aplica.
+#
+# Origen: estas asignaciones se han deducido del historial de commits (qué
+# persona tocó más cada área) y de los permisos de escritura del repositorio.
+# No proceden de un acuerdo previo con los interesados. Si algo está mal
+# asignado, corrígelo en un pull request.
+#
+# Esto es un documento informativo. GitHub no lo interpreta: para que pida
+# revisión automáticamente hay que replicar estas rutas en
+# `.github/CODEOWNERS`.
+
+# ── General ───────────────────────────────────────────────────────────────────
+*                                @Hoyuse
+
+# ── Aplicaciones en Rust ──────────────────────────────────────────────────────
+/services/                       @Hoyuse @sebaspi0922
+/preferences/                    @Hoyuse @elgatolinux
+/churros-welcome/                @Hoyuse
+/churros-tour/                   @Hoyuse
+/popups/                         @Hoyuse
+/control-center/                 @Hoyuse
+
+# ── Otros temas ─────────────────────────────────────────────────────────────
+# Seguridad: los reportes de vulnerabilidades no van en issues públicos. El
+# procedimiento y los canales privados están en SECURITY.md.
